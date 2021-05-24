@@ -56,7 +56,7 @@ struct NameGenerator {
             "struct": "structProperty",
             "enum": "enumProperty",
             "internal": "internalProperty",
-            "default": "defaultValue",
+            "default": "defaultValue"
         ]
         if let value = keywordsWithReplacements[currentName] {
             return value

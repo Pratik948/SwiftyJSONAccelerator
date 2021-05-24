@@ -35,14 +35,13 @@ struct SwiftJSONModelFile: ModelFile {
     mutating func generateAndAddComponentsFor(_ property: PropertyComponent) {
         let isOptional = configuration!.variablesOptional
         let isArray = property.propertyType == .valueTypeArray || property.propertyType == .objectTypeArray
-        let isObject = property.propertyType == .objectType || property.propertyType == .objectTypeArray
         let type = property.propertyType == .emptyArray ? "Any" : property.type
 
         switch property.propertyType {
         case .valueType, .valueTypeArray, .objectType, .objectTypeArray, .emptyArray:
             component.stringConstants.append(genStringConstant(property.constantName, property.key))
             component.declarations.append(genVariableDeclaration(property.name, type, isArray, isOptional))
-            component.initialisers.append(genInitializerForVariable(name: property.name, type: property.type, constantName: property.constantName, isOptional: isOptional, isArray: isArray, isObject: isObject))
+            component.initialisers.append(genInitializer(property: property))
             component.initialiserFunctionComponent.append(genInitaliserFunctionAssignmentAndParams(property.name, type, isArray, isOptional))
         case .nullType:
             // Currently we do not deal with null values.
@@ -72,17 +71,36 @@ struct SwiftJSONModelFile: ModelFile {
     /// - Returns: A string to use as the declration
     func genVariableDeclaration(_ name: String, _ type: String, _ isArray: Bool, _ isOptional: Bool) -> String {
         var internalType = type
+        var isOptional = isOptional
         if isArray {
-            internalType = "[\(type)]"
+            internalType = "List<\(type)> = .init()"
+            isOptional = false
+        }
+        switch type {
+        case "Double", "Int":
+            internalType = "RealmOptional<\(type)> = .init()"
+            isOptional = false
+        case "Bool":
+            internalType = "Bool = false"
+            isOptional = false
+        default:
+            break
         }
         return genPrimitiveVariableDeclaration(name, internalType, isOptional)
     }
 
     func genPrimitiveVariableDeclaration(_ name: String, _ type: String, _ isOptional: Bool) -> String {
-        if isOptional {
-            return "var \(name): \(type)?"
+        if configuration?.publicClassAndVariables ?? false {
+            if isOptional {
+                return "public dynamic var \(name): \(type)?"
+            }
+            return "public dynamic var \(name): \(type)"
+        } else {
+            if isOptional {
+                return "dynamic var \(name): \(type)?"
+            }
+            return "dynamic var \(name): \(type)"
         }
-        return "var \(name): \(type)"
     }
 
     /// Generate the variable declaration string
@@ -107,13 +125,36 @@ struct SwiftJSONModelFile: ModelFile {
         return result
     }
 
-    func genInitializerForVariable(name: String, type: String, constantName: String, isOptional: Bool, isArray: Bool, isObject _: Bool) -> String {
-        var variableType = type
+    func genInitializer(property: PropertyComponent) -> String {
+        let type = property.type
+        let isArray = property.propertyType == .valueTypeArray || property.propertyType == .objectTypeArray
+        let constantName = property.constantName
+        let isOptional = configuration!.variablesOptional
+        let name = property.name
         if isArray {
-            variableType = "[\(type)]"
+            let decodeMethod = isOptional ? "decodeIfPresent" : "decode"
+            let component = constantName.components(separatedBy: ".")
+            return "let \(name) = try container.\(decodeMethod)([\(type)].self, forKey: .\(component.last!)) ?? []\n        self.\(name).append(objectsIn: \(name))"
+        }
+        let decodeMethod: String
+        var assigneeVariable = "\(name)"
+        switch type {
+        case "Bool":
+            decodeMethod = "decodeToBoolIfPresent"
+        case "Double":
+            decodeMethod = "decodeToDoubleIfPresent"
+            assigneeVariable += ".value"
+        case "Int":
+            decodeMethod = "decodeToIntIfPresent"
+            assigneeVariable += ".value"
+        case "String":
+            decodeMethod = "decodeToStringIfPresent"
+        default:
+            let component = constantName.components(separatedBy: ".")
+            decodeMethod = isOptional ? "decodeIfPresent" : "decode"
+            return "\(assigneeVariable) = try container.\(decodeMethod)(\(type).self, forKey: .\(component.last!))"
         }
         let component = constantName.components(separatedBy: ".")
-        let decodeMethod = isOptional ? "decodeIfPresent" : "decode"
-        return "\(name) = try container.\(decodeMethod)(\(variableType).self, forKey: .\(component.last!))"
+        return "\(assigneeVariable) = container.\(decodeMethod)(forKey: .\(component.last!))"
     }
 }

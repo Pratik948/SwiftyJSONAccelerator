@@ -23,7 +23,8 @@ class SJEditorViewController: NSViewController, NSTextViewDelegate {
     @IBOutlet var generateInitialiserFunctionCheckbox: NSButton!
     @IBOutlet var librarySelector: NSPopUpButton!
     @IBOutlet var modelTypeSelectorSegment: NSSegmentedControl!
-
+    @IBOutlet var publicClassAndVariables: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.delegate = self
@@ -130,8 +131,10 @@ extension SJEditorViewController {
     @IBAction func modelTypeSwitched(sender _: Any) {
         if modelTypeSelectorSegment.selectedSegment == 0 {
             generateInitialiserFunctionCheckbox.isEnabled = false
+            publicClassAndVariables.isEnabled = false
         } else {
             generateInitialiserFunctionCheckbox.isEnabled = true
+            publicClassAndVariables.isEnabled = true
         }
     }
 
@@ -207,6 +210,7 @@ extension SJEditorViewController {
             let separateCodingKeys = separateCodingKeysCheckbox.state == .on
             let constructType = modelTypeSelectorSegment.selectedSegment == 0 ? ConstructType.structType : ConstructType.classType
             let libraryType = mappingMethodForIndex(librarySelector.indexOfSelectedItem)
+            let publicClassAndVariablesEnabled = self.publicClassAndVariables.state == .on
             let configuration = ModelGenerationConfiguration(
                 filePath: destinationPath,
                 baseClassName: baseClassTextField.stringValue,
@@ -217,7 +221,8 @@ extension SJEditorViewController {
                 modelMappingLibrary: libraryType,
                 separateCodingKeys: separateCodingKeys,
                 variablesOptional: variablesOptional,
-                shouldGenerateInitMethod: generateInitialiserFunction
+                shouldGenerateInitMethod: generateInitialiserFunction,
+                publicClassAndVariables: publicClassAndVariablesEnabled
             )
             let modelGenerator = ModelGenerator(JSON(parserResponse.parsedObject!), configuration)
             let filesGenerated = modelGenerator.generate()

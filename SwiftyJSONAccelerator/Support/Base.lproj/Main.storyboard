@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNy-hH-vch">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNy-hH-vch">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -238,21 +238,21 @@
             <objects>
                 <viewController title="SwiftyJSONAccelerator" id="BNy-hH-vch" customClass="SJEditorViewController" customModule="SwiftyJSONAccelerator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="d7y-WW-Bkc">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="485"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="491"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uv-ll-o8s">
-                                <rect key="frame" x="0.0" y="0.0" width="660" height="485"/>
+                                <rect key="frame" x="0.0" y="0.0" width="660" height="491"/>
                                 <clipView key="contentView" id="SgB-eN-xGq">
-                                    <rect key="frame" x="0.0" y="0.0" width="660" height="485"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="660" height="491"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="IcJ-lQ-oY8" customClass="SJTextView" customModule="SwiftyJSONAccelerator" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="660" height="485"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="660" height="491"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="660" height="485"/>
+                                            <size key="minSize" width="660" height="491"/>
                                             <size key="maxSize" width="717" height="10000000"/>
                                             <color key="insertionPointColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
@@ -267,12 +267,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="ISY-xp-qQJ">
-                                    <rect key="frame" x="644" y="0.0" width="16" height="485"/>
+                                    <rect key="frame" x="644" y="0.0" width="16" height="491"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fl9-Mi-DaP">
-                                <rect key="frame" x="680" y="409" width="300" height="30"/>
+                                <rect key="frame" x="680" y="415" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Iyy-E8-Bvi"/>
                                     <constraint firstAttribute="height" constant="30" id="XO1-4Y-qYs"/>
@@ -284,7 +284,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Mr-1N-crJ">
-                                <rect key="frame" x="680" y="371" width="300" height="30"/>
+                                <rect key="frame" x="680" y="377" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U1i-4E-4ME"/>
                                     <constraint firstAttribute="width" constant="300" id="YRP-HK-fbQ"/>
@@ -296,7 +296,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mt2-P0-b37">
-                                <rect key="frame" x="680" y="333" width="300" height="30"/>
+                                <rect key="frame" x="680" y="339" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="eq1-L9-Fo5"/>
                                     <constraint firstAttribute="height" constant="30" id="mDQ-ff-EDR"/>
@@ -308,7 +308,7 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXg-zV-mn8">
-                                <rect key="frame" x="677" y="280" width="306" height="34"/>
+                                <rect key="frame" x="677" y="285" width="307" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="KjA-rM-gJV"/>
                                 </constraints>
@@ -323,7 +323,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <segmentedControl focusRingType="exterior" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qP9-w3-pR6">
-                                <rect key="frame" x="680" y="244" width="300" height="31"/>
+                                <rect key="frame" x="679" y="249" width="302" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LiJ-Si-Mzp"/>
                                     <constraint firstAttribute="width" constant="300" id="by7-Tm-eLU"/>
@@ -340,7 +340,7 @@
                                 </connections>
                             </segmentedControl>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="lAN-qa-XnT">
-                                <rect key="frame" x="678" y="202" width="304" height="29"/>
+                                <rect key="frame" x="678" y="209" width="302" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="h7y-dn-vVW"/>
                                 </constraints>
@@ -350,7 +350,7 @@
                                 </buttonCell>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="pB7-0O-Vtq">
-                                <rect key="frame" x="678" y="169" width="304" height="29"/>
+                                <rect key="frame" x="678" y="176" width="302" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="bCs-a8-GIJ"/>
                                 </constraints>
@@ -360,7 +360,7 @@
                                 </buttonCell>
                             </button>
                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7hF-sw-VUE">
-                                <rect key="frame" x="680" y="447" width="300" height="30"/>
+                                <rect key="frame" x="680" y="453" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="PHZ-hY-wpS"/>
                                     <constraint firstAttribute="height" constant="30" id="VOJ-wK-3b9"/>
@@ -372,7 +372,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="El4-0W-0aD">
-                                <rect key="frame" x="674" y="85" width="312" height="41"/>
+                                <rect key="frame" x="673" y="51" width="314" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pjX-sU-1Xq"/>
                                 </constraints>
@@ -404,10 +404,10 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="failure" id="1IC-3w-iY4"/>
                             </imageView>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Yg1-20-FN4">
-                                <rect key="frame" x="680" y="79" width="300" height="5"/>
+                                <rect key="frame" x="680" y="45" width="300" height="5"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Bo-qk-f4Q">
-                                <rect key="frame" x="674" y="35" width="312" height="41"/>
+                                <rect key="frame" x="673" y="1" width="314" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Zol-vh-vH2"/>
                                 </constraints>
@@ -431,7 +431,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Qme-2d-I7f">
-                                <rect key="frame" x="678" y="136" width="304" height="29"/>
+                                <rect key="frame" x="678" y="143" width="302" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="12U-ZA-rFi"/>
                                 </constraints>
@@ -440,8 +440,19 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="uVL-I1-ifI">
+                                <rect key="frame" x="678" y="103" width="302" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="P8a-oE-WG9"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Generate class and variables as public" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="eXP-UC-A8P">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="uVL-I1-ifI" firstAttribute="top" secondItem="Qme-2d-I7f" secondAttribute="bottom" constant="15" id="0Bd-4C-ssP"/>
                             <constraint firstItem="7hF-sw-VUE" firstAttribute="leading" secondItem="3uv-ll-o8s" secondAttribute="trailing" constant="20" id="3Hm-Uu-zUA"/>
                             <constraint firstAttribute="trailing" secondItem="RXg-zV-mn8" secondAttribute="trailing" constant="20" id="590-WH-l3m"/>
                             <constraint firstItem="1Mr-1N-crJ" firstAttribute="leading" secondItem="3uv-ll-o8s" secondAttribute="trailing" constant="20" id="6Lj-2K-2ds"/>
@@ -450,8 +461,10 @@
                             <constraint firstItem="qP9-w3-pR6" firstAttribute="top" secondItem="RXg-zV-mn8" secondAttribute="bottom" constant="8" id="DpQ-gI-6Rl"/>
                             <constraint firstItem="3uv-ll-o8s" firstAttribute="top" secondItem="d7y-WW-Bkc" secondAttribute="top" id="DzH-YJ-ycf"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="El4-0W-0aD" secondAttribute="bottom" constant="8" id="FKE-CK-PuG"/>
+                            <constraint firstItem="uVL-I1-ifI" firstAttribute="leading" secondItem="Qme-2d-I7f" secondAttribute="leading" id="FuN-eb-1cu"/>
                             <constraint firstItem="fl9-Mi-DaP" firstAttribute="leading" secondItem="3uv-ll-o8s" secondAttribute="trailing" constant="20" id="G6t-Wt-Oow"/>
                             <constraint firstItem="pB7-0O-Vtq" firstAttribute="leading" secondItem="3uv-ll-o8s" secondAttribute="trailing" constant="20" id="Gno-Gj-XCj"/>
+                            <constraint firstItem="uVL-I1-ifI" firstAttribute="trailing" secondItem="Qme-2d-I7f" secondAttribute="trailing" id="HtD-kl-lXX"/>
                             <constraint firstItem="9Bo-qk-f4Q" firstAttribute="leading" secondItem="3uv-ll-o8s" secondAttribute="trailing" constant="20" id="I6g-ta-dAC"/>
                             <constraint firstAttribute="trailing" secondItem="mt2-P0-b37" secondAttribute="trailing" constant="20" id="ITV-HH-WbR"/>
                             <constraint firstItem="qP9-w3-pR6" firstAttribute="leading" secondItem="3uv-ll-o8s" secondAttribute="trailing" constant="20" id="Jhm-Ji-q6E"/>
@@ -480,7 +493,7 @@
                             <constraint firstItem="lAN-qa-XnT" firstAttribute="top" secondItem="qP9-w3-pR6" secondAttribute="bottom" constant="16" id="uHg-et-tgc"/>
                             <constraint firstItem="Yg1-20-FN4" firstAttribute="width" secondItem="El4-0W-0aD" secondAttribute="width" id="wnX-0B-duv"/>
                             <constraint firstAttribute="trailing" secondItem="qP9-w3-pR6" secondAttribute="trailing" constant="20" id="x0q-NR-sYv"/>
-                            <constraint firstItem="El4-0W-0aD" firstAttribute="top" secondItem="Qme-2d-I7f" secondAttribute="bottom" constant="16" id="xHj-BS-SLf"/>
+                            <constraint firstItem="El4-0W-0aD" firstAttribute="top" secondItem="uVL-I1-ifI" secondAttribute="bottom" constant="16" id="xHj-BS-SLf"/>
                             <constraint firstItem="7hF-sw-VUE" firstAttribute="top" secondItem="d7y-WW-Bkc" secondAttribute="top" constant="8" id="xPY-e4-Evb"/>
                             <constraint firstItem="9Bo-qk-f4Q" firstAttribute="top" secondItem="Yg1-20-FN4" secondAttribute="bottom" constant="9" id="yX3-NX-cHg"/>
                             <constraint firstItem="3uv-ll-o8s" firstAttribute="leading" secondItem="d7y-WW-Bkc" secondAttribute="leading" id="yZG-gv-sUr"/>
@@ -496,6 +509,7 @@
                         <outlet property="librarySelector" destination="RXg-zV-mn8" id="RMr-Fm-2Ho"/>
                         <outlet property="modelTypeSelectorSegment" destination="qP9-w3-pR6" id="R9u-ms-jeK"/>
                         <outlet property="prefixClassTextField" destination="fl9-Mi-DaP" id="imr-qY-akM"/>
+                        <outlet property="publicClassAndVariables" destination="uVL-I1-ifI" id="dZE-C9-enK"/>
                         <outlet property="separateCodingKeysCheckbox" destination="pB7-0O-Vtq" id="Bej-LF-N1X"/>
                         <outlet property="textView" destination="IcJ-lQ-oY8" id="5Qd-us-tJA"/>
                         <outlet property="variablesOptionalCheckbox" destination="lAN-qa-XnT" id="GXB-fI-BrS"/>

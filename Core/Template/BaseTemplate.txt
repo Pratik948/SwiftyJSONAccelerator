@@ -6,20 +6,19 @@
 //
 
 import Foundation
+import RealmSwift
 
-{OBJECT_KIND} {OBJECT_NAME}: Codable {
+@objcMembers
+{OBJECT_KIND} {OBJECT_NAME}: Object, Decodable {
 
-  enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
 {STRING_CONSTANT}
-  }
+    }
 
 {DECLARATION}
-{INITIALIZER_FUNCTION_DECLRATION}
-{INITIALISER_FUNCTION_ASSIGNMENT}
-{INITIALISER_FUNCTION_END}
-  {REQUIRED}init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: CodingKeys.self)
+    {REQUIRED}init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
 {INITIALIZER}
-  }
+    }
 
 }

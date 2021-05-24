@@ -30,6 +30,8 @@ struct ModelGenerationConfiguration {
     var variablesOptional: Bool
     /// Should generate a init method for the class (applicable only to class).
     var shouldGenerateInitMethod: Bool
+    /// Should generate a  class and variables public
+    var publicClassAndVariables: Bool
 
     mutating func defaultConfig() {
         variablesOptional = true
@@ -40,5 +42,6 @@ struct ModelGenerationConfiguration {
         filePath = ""
         baseClassName = ""
         shouldGenerateInitMethod = true
+        publicClassAndVariables = false
     }
 }
