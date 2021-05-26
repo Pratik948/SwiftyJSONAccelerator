@@ -33,7 +33,7 @@ extension FileGenerator {
         content = content.replacingOccurrences(of: "{INITIALIZER}", with: initialisers)
 
         if modelFile.type == .classType {
-            content = content.replacingOccurrences(of: "{REQUIRED}", with: "required \(isPublic ? "public " : "")")
+            content = content.replacingOccurrences(of: "{REQUIRED}", with: "convenience required \(isPublic ? "public " : "")")
             if modelFile.configuration?.shouldGenerateInitMethod == true {
                 let assignment = modelFile.component.initialiserFunctionComponent.map { doubleTab + $0.assignmentString }.joined(separator: "\n")
                 let functionParameters = modelFile.component.initialiserFunctionComponent.map { $0.functionParameter }.joined(separator: ", ")
